@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/neoddish/antv-site-demo-rc/issues"
   },
-  "homepage": "https://github.com/neoddish/antv-site-demo-rc#readme",
+  "homepage": "https://neoddish.github.io/antv-site-demo-rc",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
