@@ -1,6 +1,6 @@
 {
   "name": "antv-site-demo-rc",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Encapsulation for components of demos in AntV site.",
   "main": "index.js",
   "repository": {
