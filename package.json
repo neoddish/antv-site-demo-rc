@@ -2,7 +2,15 @@
   "name": "antv-site-demo-rc",
   "version": "0.1.0-alpha.2",
   "description": "Encapsulation for components of demos in AntV site.",
-  "main": "index.js",
+  "main": "./lib/index",
+  "module": "./es/index",
+  "files": [
+    "assets/*.css",
+    "assets/*.less",
+    "es",
+    "lib",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neoddish/antv-site-demo-rc.git"
