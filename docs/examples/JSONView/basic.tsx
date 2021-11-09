@@ -1,4 +1,3 @@
-import '../../../assets/index.less';
 import React from 'react';
 import { JSONView } from 'antv-site-demo-rc';
 
