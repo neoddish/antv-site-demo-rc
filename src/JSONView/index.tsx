@@ -22,6 +22,10 @@ export const JSONView: React.FC<JSONViewProps> = ({
       {...restProps}
       className={compClassName}
       style={{
+        height: '400px',
+        padding: '20px',
+        overflowY: 'scroll',
+        border: '2px solid #eee',
         ...style,
       }}
     >
