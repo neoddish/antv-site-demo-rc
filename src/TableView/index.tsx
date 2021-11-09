@@ -20,8 +20,10 @@ export const TableView: React.FC<TableViewProps> = ({
 
   const s2DataConfig = { fields: { columns: Object.keys(data[0]) }, data };
 
-  const height = parseInt(`${style?.height}`) || 300;
-  const width = parseInt(`${style?.width}`) || 600;
+  const height =
+    (!`${style?.height}`.includes('%') && parseInt(`${style?.height}`)) || 300;
+  const width =
+    (!`${style?.width}`.includes('%') && parseInt(`${style?.width}`)) || 600;
   const s2options = { width, height };
 
   return (
