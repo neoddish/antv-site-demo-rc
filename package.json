@@ -23,8 +23,9 @@
     "start": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d .doc",
+    "compile": "father build",
     "gh-pages": "npm run docs:build && father doc deploy",
-    "prepublishOnly": "np --yolo --no-publish && npm run gh-pages",
+    "prepublishOnly": "npm run compile && np --yolo --no-publish && npm run gh-pages",
     "lint": "eslint src/ --ext .ts,.tsx,.jsx,.js,.md",
     "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "pretty-quick": "pretty-quick",
@@ -36,6 +37,7 @@
     "classnames": "^2.2.1"
   },
   "devDependencies": {
+    "@antv/antv-spec": "0.1.0-alpha.4",
     "@antv/s2": "^0.2.5",
     "@types/classnames": "^2.2.9",
     "@types/react": "^17.0.13",
@@ -63,6 +65,7 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
+    "@antv/antv-spec": ">=0.1.0-alpha.4",
     "@antv/s2": ">=0.2.5",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
