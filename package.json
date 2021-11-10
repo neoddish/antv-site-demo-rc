@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@antv/antv-spec": "0.1.0-alpha.4",
+    "@antv/g2plot": "^2.3.39",
     "@antv/s2": "^0.2.5",
     "@types/classnames": "^2.2.9",
     "@types/react": "^17.0.13",
