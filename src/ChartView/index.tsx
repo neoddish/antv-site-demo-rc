@@ -6,15 +6,15 @@ export interface ChartViewProps {
   prefixCls?: string;
   className?: string;
   style?: React.CSSProperties;
-  ref: React.RefObject<any>;
+  chartRef: React.RefObject<any>;
   spec: any;
 }
 
 export const ChartView: React.FC<ChartViewProps> = ({
-  prefixCls = 'antvsite-rc-tableview',
+  prefixCls = 'antvsite-rc-chartview',
   className,
   style,
-  ref,
+  chartRef,
   spec,
   ...restProps
 }) => {
@@ -24,8 +24,8 @@ export const ChartView: React.FC<ChartViewProps> = ({
   const width = style?.width || '100%';
 
   useEffect(() => {
-    if (ref.current) {
-      specToG2Plot(spec, ref.current);
+    if (chartRef?.current) {
+      specToG2Plot(spec, chartRef.current);
     }
   });
 
@@ -33,7 +33,7 @@ export const ChartView: React.FC<ChartViewProps> = ({
     <div
       {...restProps}
       className={compClassName}
-      ref={ref}
+      ref={chartRef}
       style={{ width, height, margin: 'auto' }}
     />
   );
