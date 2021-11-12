@@ -18,7 +18,10 @@ export const TableView: React.FC<TableViewProps> = ({
 }) => {
   const compClassName = classNames(`${prefixCls}`, className);
 
-  const s2DataConfig = { fields: { columns: Object.keys(data[0]) }, data };
+  const s2DataConfig = {
+    fields: { columns: Object.keys(data?.[0] || {}) },
+    data,
+  };
 
   const height =
     (!`${style?.height}`.includes('%') && parseInt(`${style?.height}`)) || 300;
