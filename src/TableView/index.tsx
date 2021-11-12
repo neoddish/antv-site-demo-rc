@@ -1,11 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
+import type { SpreadsheetProps } from '@antv/s2';
 import { SheetComponent } from '@antv/s2';
 
 export interface TableViewProps {
   prefixCls?: string;
   className?: string;
   style?: React.CSSProperties;
+  s2Configs?: Omit<SpreadsheetProps, 'dataCfg' | 'options'>;
   data: any[];
 }
 
@@ -13,6 +15,7 @@ export const TableView: React.FC<TableViewProps> = ({
   prefixCls = 'antvsite-rc-tableview',
   className,
   style,
+  s2Configs,
   data,
   ...restProps
 }) => {
@@ -42,7 +45,8 @@ export const TableView: React.FC<TableViewProps> = ({
         dataCfg={s2DataConfig}
         options={s2options}
         sheetType="table"
-        themeCfg={{ name: 'simple' }}
+        themeCfg={{ name: 'colorful' }}
+        {...s2Configs}
       />
     </div>
   );
