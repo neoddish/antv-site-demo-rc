@@ -5,3 +5,4 @@ export * from './LintCard';
 export * from './StepBar';
 export * from './PlotCard';
 export * from './InsightCard';
+export * from './PagList';
