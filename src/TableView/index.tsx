@@ -8,6 +8,8 @@ export interface TableViewProps {
   className?: string;
   style?: React.CSSProperties;
   s2Configs?: Omit<SpreadsheetProps, 'dataCfg' | 'options'>;
+  tableHeight?: number;
+  tableWidth?: number;
   data: any[];
 }
 
@@ -16,6 +18,8 @@ export const TableView: React.FC<TableViewProps> = ({
   className,
   style,
   s2Configs,
+  tableHeight,
+  tableWidth,
   data,
   ...restProps
 }) => {
@@ -27,9 +31,13 @@ export const TableView: React.FC<TableViewProps> = ({
   };
 
   const height =
-    (!`${style?.height}`.includes('%') && parseInt(`${style?.height}`)) || 300;
+    tableHeight ||
+    (!`${style?.height}`.includes('%') && parseInt(`${style?.height}`)) ||
+    300;
   const width =
-    (!`${style?.width}`.includes('%') && parseInt(`${style?.width}`)) || 600;
+    tableWidth ||
+    (!`${style?.width}`.includes('%') && parseInt(`${style?.width}`)) ||
+    600;
   const s2options = { width, height };
 
   return (
@@ -37,10 +45,9 @@ export const TableView: React.FC<TableViewProps> = ({
       {...restProps}
       className={compClassName}
       style={{
-        height: '400px',
-        padding: '20px',
+        textAlign: 'center',
         overflowY: 'scroll',
-        border: '2px solid #eee',
+        border: '1px solid #eee',
         ...style,
       }}
     >
