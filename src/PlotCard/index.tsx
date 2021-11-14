@@ -51,7 +51,7 @@ export const PlotCard: React.FC<PlotCardProps> = ({
     });
     plot.render();
     plotRef.current = plot;
-  }, [chartType]);
+  }, [chartType, data, schema]);
 
   useEffect(() => {
     if (plotRef.current) {
