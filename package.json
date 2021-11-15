@@ -68,7 +68,7 @@
   },
   "peerDependencies": {
     "@antv/antv-spec": ">=0.1.0-alpha.6",
-    "@antv/s2": ">=0.2.5",
+    "@antv/s2": ">=1.0.0-beta.9",
     "antd": ">=4.0.0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
