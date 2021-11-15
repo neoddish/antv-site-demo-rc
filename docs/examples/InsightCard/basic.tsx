@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form, Switch } from 'antd';
 import { InsightCard } from 'antv-site-demo-rc';
 
 const data = [
@@ -67,15 +68,44 @@ const visualizationSchemas = [
       ],
     },
     caption: 'Trend appearing in fertility(MEAN) by year',
-    insightSummary: ['The fertility goes decreasing.'],
+    insightSummaries: ['The fertility goes decreasing.'],
+    insightSummarySchemas: [
+      [
+        { type: 'text', value: 'The' },
+        {
+          type: 'entity',
+          value: 'fertility',
+          metadata: { entityType: 'metric_name' },
+        },
+        { type: 'text', value: 'goes' },
+        {
+          type: 'entity',
+          value: 'decreasing',
+          metadata: { entityType: 'trend_desc' },
+        },
+      ],
+    ],
   },
 ];
 
 export default function App() {
+  const [showTextSchema, setShowTextSchema] = useState<boolean>(false);
   const insightInfo = {
     data,
     visualizationSchemas,
   };
 
-  return <InsightCard insightInfo={insightInfo} width={1000} height={300} />;
+  return (
+    <>
+      <Form.Item label="开启文本插件">
+        <Switch checked={showTextSchema} onChange={setShowTextSchema} />
+      </Form.Item>
+      <InsightCard
+        showTextSchema={showTextSchema}
+        insightInfo={insightInfo as any}
+        width={1000}
+        height={300}
+      />
+    </>
+  );
 }

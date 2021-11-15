@@ -1,5 +1,7 @@
 import React from 'react';
 import { Timeline } from 'antd';
+import { Paragraph } from '@antv/narrative-text-vis';
+import type { IPhrase } from '@antv/narrative-text-vis';
 import {
   RiseOutlined,
   FallOutlined,
@@ -10,12 +12,14 @@ import {
   BarChartOutlined,
 } from '@ant-design/icons';
 import { PlotCard } from '../PlotCard';
+import '@antv/narrative-text-vis/es/index.css';
 
 type VisualizationSchema = {
   chartType: string;
   chartSchema: any;
   caption: string;
-  insightSummary: string[];
+  insightSummaries: string[];
+  insightSummarySchemas: IPhrase[][];
 };
 
 export interface InsightCardProps {
@@ -23,6 +27,8 @@ export interface InsightCardProps {
     data: any;
     visualizationSchemas: VisualizationSchema[];
   };
+  /** 是否显示 T8 文本 */
+  showTextSchema?: boolean;
   width?: number;
   height?: number;
 }
@@ -43,13 +49,21 @@ const getInsightIcon = (insightText: string) => {
   return <DotChartOutlined style={{ fontSize: 24 }} />;
 };
 
-export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
+export const InsightCard: React.FC<InsightCardProps> = ({
+  insightInfo,
+  showTextSchema = false,
+}) => {
   const { data, visualizationSchemas } = insightInfo;
 
   if (!visualizationSchemas) return null;
 
-  const { chartType, chartSchema, caption, insightSummary } =
-    visualizationSchemas[0];
+  const {
+    chartType,
+    chartSchema,
+    caption,
+    insightSummaries,
+    insightSummarySchemas,
+  } = visualizationSchemas[0];
 
   return (
     <div
@@ -69,8 +83,19 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
       </div>
       <div style={{ flex: 1, paddingLeft: 20, paddingTop: 40 }}>
         <Timeline>
-          {insightSummary?.map((item) => (
-            <Timeline.Item dot={getInsightIcon(item)}>{item}</Timeline.Item>
+          {insightSummaries?.map((item, index) => (
+            <Timeline.Item dot={getInsightIcon(item)} key={item}>
+              {showTextSchema ? (
+                <Paragraph
+                  spec={{
+                    type: 'normal',
+                    phrases: insightSummarySchemas[index],
+                  }}
+                />
+              ) : (
+                item
+              )}
+            </Timeline.Item>
           ))}
         </Timeline>
       </div>
