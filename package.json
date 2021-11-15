@@ -67,7 +67,7 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "@antv/antv-spec": ">=0.1.0-alpha.9",
+    "@antv/antv-spec": ">=0.1.0-alpha.6",
     "@antv/s2": ">=0.2.5",
     "antd": ">=4.0.0",
     "react": ">=16.0.0",
