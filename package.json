@@ -1,10 +1,10 @@
 {
   "name": "antv-site-demo-rc",
-  "version": "0.1.0-alpha.13",
+  "version": "0.1.0-alpha.14",
   "description": "Encapsulation for components of demos in AntV site.",
   "main": "./lib/index",
   "module": "./es/index",
-  "unpkg":"./dist/index.min.js",
+  "unpkg": "./dist/index.min.js",
   "files": [
     "es",
     "lib",
