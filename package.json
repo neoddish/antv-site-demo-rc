@@ -4,6 +4,7 @@
   "description": "Encapsulation for components of demos in AntV site.",
   "main": "./lib/index",
   "module": "./es/index",
+  "unpkg":"./dist/index.min.js",
   "files": [
     "es",
     "lib",

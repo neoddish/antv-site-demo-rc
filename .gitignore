@@ -25,6 +25,8 @@ assets/**/*.css
 build
 lib
 es
+esm
+dist
 yarn.lock
 package-lock.json
 coverage/
@@ -34,4 +36,4 @@ coverage/
 .umi
 .umi-production
 .umi-test
-.env.local 
+.env.local
