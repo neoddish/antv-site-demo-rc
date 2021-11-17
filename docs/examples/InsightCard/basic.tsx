@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Form, Switch } from 'antd';
+import React from 'react';
 import { InsightCard } from 'antv-site-demo-rc';
 
 const data = [
@@ -49,60 +48,81 @@ const data = [
   },
 ];
 
-const visualizationSchemas = [
-  {
-    chartType: 'line_chart',
-    chartSchema: {
-      xField: 'year',
-      yField: 'fertility',
-      annotations: [
-        {
-          type: 'line',
-          start: ['min', 5.06],
-          end: ['max', 2.16],
-          style: {
-            lineDash: [2, 2],
-            stroke: '#E09322',
-          },
-        },
-      ],
-    },
-    caption: 'Trend appearing in fertility(MEAN) by year',
-    insightSummaries: ['The fertility goes decreasing.'],
-    insightSummarySchemas: [
-      [
-        { type: 'text', value: 'The' },
-        {
-          type: 'entity',
-          value: 'fertility',
-          metadata: { entityType: 'metric_name' },
-        },
-        { type: 'text', value: 'goes' },
-        {
-          type: 'entity',
-          value: 'decreasing',
-          metadata: { entityType: 'trend_desc' },
-        },
-      ],
-    ],
-  },
-];
-
 export default function App() {
-  const [showTextSchema, setShowTextSchema] = useState<boolean>(false);
-  const insightInfo = {
-    data,
-    visualizationSchemas,
-  };
-
   return (
     <>
-      <Form.Item label="开启文本插件">
-        <Switch checked={showTextSchema} onChange={setShowTextSchema} />
-      </Form.Item>
+      <div>纯文本描述</div>
       <InsightCard
-        showTextSchema={showTextSchema}
-        insightInfo={insightInfo as any}
+        insightInfo={{
+          data,
+          visualizationSchemas: [
+            {
+              chartType: 'line_chart',
+              chartSchema: {
+                xField: 'year',
+                yField: 'fertility',
+                annotations: [
+                  {
+                    type: 'line',
+                    start: ['min', 5.06],
+                    end: ['max', 2.16],
+                    style: {
+                      lineDash: [2, 2],
+                      stroke: '#E09322',
+                    },
+                  },
+                ],
+              },
+              caption: 'Trend appearing in fertility(MEAN) by year',
+              insightSummaries: ['The fertility goes decreasing.'],
+            },
+          ],
+        }}
+        width={1000}
+        height={300}
+      />
+      <div>文本 schema 描述</div>
+      <InsightCard
+        insightInfo={{
+          data,
+          visualizationSchemas: [
+            {
+              chartType: 'line_chart',
+              chartSchema: {
+                xField: 'year',
+                yField: 'fertility',
+                annotations: [
+                  {
+                    type: 'line',
+                    start: ['min', 5.06],
+                    end: ['max', 2.16],
+                    style: {
+                      lineDash: [2, 2],
+                      stroke: '#E09322',
+                    },
+                  },
+                ],
+              },
+              caption: 'Trend appearing in fertility(MEAN) by year',
+              insightSummaries: [
+                [
+                  { type: 'text', value: 'The' },
+                  {
+                    type: 'entity',
+                    value: 'fertility',
+                    metadata: { entityType: 'metric_name' },
+                  },
+                  { type: 'text', value: 'goes' },
+                  {
+                    type: 'entity',
+                    value: 'decreasing',
+                    metadata: { entityType: 'trend_desc' },
+                  },
+                ],
+              ],
+            },
+          ],
+        }}
         width={1000}
         height={300}
       />

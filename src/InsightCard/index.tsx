@@ -18,8 +18,7 @@ type VisualizationSchema = {
   chartType: string;
   chartSchema: any;
   caption: string;
-  insightSummaries: string[];
-  insightSummarySchemas: IPhrase[][];
+  insightSummaries: string[] | IPhrase[][];
 };
 
 export interface InsightCardProps {
@@ -33,7 +32,10 @@ export interface InsightCardProps {
   height?: number;
 }
 
-const getInsightIcon = (insightText: string) => {
+const getInsightIcon = (insightSummary: string | IPhrase[]) => {
+  const insightText = Array.isArray(insightSummary)
+    ? insightSummary.map((i) => i.value)
+    : insightSummary;
   if (insightText.indexOf('increasing') !== -1)
     return <RiseOutlined style={{ fontSize: 24 }} />;
   if (insightText.indexOf('decreasing') !== -1)
@@ -49,21 +51,13 @@ const getInsightIcon = (insightText: string) => {
   return <DotChartOutlined style={{ fontSize: 24 }} />;
 };
 
-export const InsightCard: React.FC<InsightCardProps> = ({
-  insightInfo,
-  showTextSchema = false,
-}) => {
+export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
   const { data, visualizationSchemas } = insightInfo;
 
   if (!visualizationSchemas) return null;
 
-  const {
-    chartType,
-    chartSchema,
-    caption,
-    insightSummaries,
-    insightSummarySchemas,
-  } = visualizationSchemas[0];
+  const { chartType, chartSchema, caption, insightSummaries } =
+    visualizationSchemas[0];
 
   return (
     <div
@@ -84,12 +78,12 @@ export const InsightCard: React.FC<InsightCardProps> = ({
       <div style={{ flex: 1, paddingLeft: 20, paddingTop: 40 }}>
         <Timeline>
           {insightSummaries?.map((item, index) => (
-            <Timeline.Item dot={getInsightIcon(item)} key={item}>
-              {showTextSchema ? (
+            <Timeline.Item dot={getInsightIcon(item)} key={index}>
+              {Array.isArray(item) ? (
                 <Paragraph
                   spec={{
                     type: 'normal',
-                    phrases: insightSummarySchemas[index],
+                    phrases: item,
                   }}
                 />
               ) : (
