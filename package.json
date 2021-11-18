@@ -34,7 +34,7 @@
     "coverage": "father test --coverage"
   },
   "dependencies": {
-    "@antv/antv-spec": "^0.1.0-alpha.11",
+    "@antv/antv-spec": "0.1.0-alpha.15",
     "@antv/g2plot": "^2.3.39",
     "@antv/g6": "^4.4.1",
     "@antv/narrative-text-vis": "^0.1.6-alpha.5",
