@@ -63,11 +63,12 @@ export const PlotCard: React.FC<PlotCardProps> = ({
   return (
     <div
       style={{
-        height: height || 400,
-        width: width || 600,
-        margin: '24px',
+        height: height || '100%',
+        width: width || '100%',
+        padding: '24px',
         display: 'flex',
         flexDirection: 'column',
+        overflow: 'hidden',
       }}
     >
       <div
