@@ -51,7 +51,11 @@ const getInsightIcon = (insightSummary: string | IPhrase[]) => {
   return <DotChartOutlined style={{ fontSize: 24 }} />;
 };
 
-export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
+export const InsightCard: React.FC<InsightCardProps> = ({
+  insightInfo,
+  width,
+  height,
+}) => {
   const { data, visualizationSchemas } = insightInfo;
 
   if (!visualizationSchemas) return null;
@@ -64,10 +68,13 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
       style={{
         padding: 16,
         display: 'flex',
+        overflowX: 'auto',
         boxShadow: '0px 1px 2px -1px #d9d9d9',
+        width: width || '100%',
+        height: height || '100%',
       }}
     >
-      <div style={{ flex: 'none' }}>
+      <div style={{ flex: 2 }}>
         <PlotCard
           chartType={chartType}
           data={data}
@@ -75,8 +82,8 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insightInfo }) => {
           caption={caption}
         />
       </div>
-      <div style={{ flex: 1, paddingLeft: 20, paddingTop: 40 }}>
-        <Timeline>
+      <div style={{ flex: 1, minWidth: 150, paddingLeft: 20, paddingTop: 40 }}>
+        <Timeline style={{ width: '100%', height: '100%' }}>
           {insightSummaries?.map((item, index) => (
             <Timeline.Item dot={getInsightIcon(item)} key={index}>
               {Array.isArray(item) ? (

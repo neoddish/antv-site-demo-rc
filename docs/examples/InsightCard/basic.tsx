@@ -78,7 +78,7 @@ export default function App() {
             },
           ],
         }}
-        width={1000}
+        width={700}
         height={300}
       />
       <div>文本 schema 描述</div>
@@ -123,7 +123,7 @@ export default function App() {
             },
           ],
         }}
-        width={1000}
+        width={700}
         height={300}
       />
     </>
