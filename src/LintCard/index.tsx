@@ -1,4 +1,4 @@
-import 'antd/dist/antd.less';
+import 'antd/dist/antd.css';
 import React from 'react';
 import classNames from 'classnames';
 import { List } from 'antd';
