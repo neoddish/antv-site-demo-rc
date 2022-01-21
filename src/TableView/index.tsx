@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import type { SpreadsheetProps } from '@antv/s2';
-import { SheetComponent } from '@antv/s2';
+import type { SpreadsheetProps } from '@antv/s2-react';
+import { SheetComponent } from '@antv/s2-react';
 
 export interface TableViewProps {
   prefixCls?: string;
