@@ -33,12 +33,19 @@
     "test": "father test",
     "coverage": "father test --coverage"
   },
+  "peerDependencies": {
+    "antd": ">=4.0.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
+    "react-json-view": ">=1.19.1",
+    "@antv/antv-spec": ">=0.1.0-alpha.15",
+    "@antv/g2plot": ">=2.3.39",
+    "@antv/g6": ">=4.4.1",
+    "@antv/narrative-text-vis": ">=0.1.6-alpha.5",
+    "@antv/s2": ">=1.0.0",
+    "@antv/s2-react": ">=1.6.0"
+  },
   "dependencies": {
-    "@antv/antv-spec": "0.1.0-alpha.15",
-    "@antv/g2plot": "^2.3.39",
-    "@antv/g6": "^4.4.1",
-    "@antv/narrative-text-vis": "^0.1.6-alpha.5",
-    "@antv/s2-react": "^1.6.0",
     "@babel/runtime": "^7.11.1",
     "classnames": "^2.2.1"
   },
@@ -49,6 +56,12 @@
     "@umijs/fabric": "^2.0.8",
     "antd": "^4.16.13",
     "@ant-design/icons": "^4.7.0",
+    "@antv/antv-spec": "^0.1.0-alpha.15",
+    "@antv/g2plot": "^2.3.39",
+    "@antv/g6": "^4.4.1",
+    "@antv/narrative-text-vis": "^0.1.6-alpha.5",
+    "@antv/s2": "^1.6.0",
+    "@antv/s2-react": "^1.6.0",
     "coveralls": "^3.0.6",
     "cross-env": "^7.0.2",
     "dumi": "^1.1.0",
@@ -69,12 +82,6 @@
     "react-json-view": "^1.21.3",
     "react-test-renderer": "^16.0.0",
     "typescript": "^4.0.5"
-  },
-  "peerDependencies": {
-    "antd": ">=4.0.0",
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0",
-    "react-json-view": ">=1.19.1"
   },
   "husky": {
     "hooks": {
