@@ -31,6 +31,8 @@ export const JSONView: React.FC<JSONViewProps> = ({
         ...style,
       }}
     >
+      {/* react types 导致抛出错误 JSX element type 'ReactElement<any> | null' is not a constructor function for JSX elements */}
+      {/* @ts-ignore */}
       <ReactJson
         src={json}
         iconStyle="circle"

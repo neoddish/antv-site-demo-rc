@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
-import type { SpreadsheetProps } from '@antv/s2-react';
+import type { SheetComponentsProps } from '@antv/s2-react';
 import { SheetComponent } from '@antv/s2-react';
 
 export interface TableViewProps {
   prefixCls?: string;
   className?: string;
   style?: React.CSSProperties;
-  s2Configs?: Omit<SpreadsheetProps, 'dataCfg' | 'options'>;
+  s2Configs?: Omit<SheetComponentsProps, 'dataCfg' | 'options'>;
   tableHeight?: number;
   tableWidth?: number;
   data: any[];
