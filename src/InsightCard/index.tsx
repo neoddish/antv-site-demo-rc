@@ -1,7 +1,7 @@
 import React from 'react';
 import { Timeline } from 'antd';
 import { Paragraph } from '@antv/narrative-text-vis';
-import type { IPhrase } from '@antv/narrative-text-vis';
+import type { PhraseSpec } from '@antv/narrative-text-vis';
 import {
   RiseOutlined,
   FallOutlined,
@@ -12,13 +12,12 @@ import {
   BarChartOutlined,
 } from '@ant-design/icons';
 import { PlotCard } from '../PlotCard';
-import '@antv/narrative-text-vis/es/index.css';
 
 type VisualizationSchema = {
   chartType: string;
   chartSchema: any;
   caption: string;
-  insightSummaries: string[] | IPhrase[][];
+  insightSummaries: string[] | PhraseSpec[][];
 };
 
 export interface InsightCardProps {
