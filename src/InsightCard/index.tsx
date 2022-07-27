@@ -31,7 +31,7 @@ export interface InsightCardProps {
   height?: number;
 }
 
-const getInsightIcon = (insightSummary: string | IPhrase[]) => {
+const getInsightIcon = (insightSummary: string | PhraseSpec[]) => {
   const insightText = Array.isArray(insightSummary)
     ? insightSummary.map((i) => i.value)
     : insightSummary;
