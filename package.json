@@ -1,6 +1,6 @@
 {
   "name": "antv-site-demo-rc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Encapsulation for components of demos in AntV site.",
   "main": "./lib/index",
   "module": "./es/index",
@@ -34,27 +34,22 @@
     "coverage": "father test --coverage"
   },
   "peerDependencies": {
-    "antd": ">=4.0.0",
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0",
-    "react-json-view": ">=1.19.1",
     "@antv/antv-spec": ">=0.1.0-alpha.15",
     "@antv/g2plot": ">=2.3.39",
     "@antv/g6": ">=4.4.1",
     "@antv/narrative-text-vis": ">=0.3.6",
     "@antv/s2": ">=1.0.0",
-    "@antv/s2-react": ">=1.6.0"
+    "@antv/s2-react": ">=1.6.0",
+    "antd": ">=4.0.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
+    "react-json-view": ">=1.19.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.11.1",
     "classnames": "^2.2.1"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.9",
-    "@types/react": "^17.0.13",
-    "@types/react-dom": "^16.9.0",
-    "@umijs/fabric": "^2.0.8",
-    "antd": "^4.16.13",
     "@ant-design/icons": "^4.7.0",
     "@antv/antv-spec": "^0.1.0-alpha.15",
     "@antv/g2plot": "^2.3.39",
@@ -62,6 +57,11 @@
     "@antv/narrative-text-vis": "^0.3.6",
     "@antv/s2": "^1.6.0",
     "@antv/s2-react": "^1.6.0",
+    "@types/classnames": "^2.2.9",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^16.9.0",
+    "@umijs/fabric": "^2.0.8",
+    "antd": "^4.16.13",
     "coveralls": "^3.0.6",
     "cross-env": "^7.0.2",
     "dumi": "^1.1.0",
