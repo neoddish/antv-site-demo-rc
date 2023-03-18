@@ -34,6 +34,7 @@
     "coverage": "father test --coverage"
   },
   "peerDependencies": {
+    "@antv/g2": ">=5.0.0-beta.13",
     "@antv/g2plot": ">=2.3.39",
     "@antv/g6": ">=4.4.1",
     "@antv/narrative-text-vis": ">=0.3.6",
@@ -46,8 +47,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.1",
-    "classnames": "^2.2.1",
-    "@antv/g2": "^5.0.0-beta.13"
+    "classnames": "^2.2.1"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
