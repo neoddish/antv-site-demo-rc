@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { specToG2Plot } from '@antv/antv-spec';
+import { Chart } from '@antv/g2';
 
 export interface ChartViewProps {
   prefixCls?: string;
@@ -25,7 +25,13 @@ export const ChartView: React.FC<ChartViewProps> = ({
 
   useEffect(() => {
     if (chartRef?.current) {
-      specToG2Plot(spec, chartRef.current);
+      const chart = new Chart({
+        theme: 'classic',
+        container: chartRef.current,
+        autoFit: true,
+      });
+      chart.options(spec);
+      chart.render();
     }
   });
 
