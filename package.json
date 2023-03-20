@@ -35,7 +35,6 @@
   },
   "peerDependencies": {
     "@antv/g2": ">=5.0.0-beta.13",
-    "@antv/g2plot": ">=2.3.39",
     "@antv/g6": ">=4.4.1",
     "@antv/s2": ">=1.0.0",
     "@antv/s2-react": ">=1.6.0",
@@ -51,7 +50,6 @@
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
     "@antv/antv-spec": "^0.1.0-alpha.15",
-    "@antv/g2plot": "^2.3.39",
     "@antv/g6": "^4.4.1",
     "@antv/s2": "^1.6.0",
     "@antv/s2-react": "^1.6.0",
