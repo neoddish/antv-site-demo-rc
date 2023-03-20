@@ -1,6 +1,6 @@
 {
   "name": "antv-site-demo-rc",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Encapsulation for components of demos in AntV site.",
   "main": "./lib/index",
   "module": "./es/index",
